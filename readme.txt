@@ -1,0 +1,1 @@
+Quote - Spring Data REST example.
