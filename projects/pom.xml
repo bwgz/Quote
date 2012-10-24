@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>Quote</name>
+	
+	<groupId>org.bwgz.quote</groupId>
+	<artifactId>quote</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>quote-data</module>
+		<module>quote-json-server</module>
+		<module>quote-json-client</module>
+		<module>quote-android</module>
+	</modules>
+	
+	<properties>
+		<springframework-version>3.1.2.RELEASE</springframework-version>
+		<hibernate-version>4.1.6.Final</hibernate-version>
+	    <cglib-version>2.2.2</cglib-version>
+				
+	    <hsqldb-version>2.2.8</hsqldb-version>
+		<junit-version>4.10</junit-version>
+		
+		<log4j-version>1.2.14</log4j-version>
+		<slf4j-version>1.6.6</slf4j-version>
+
+	</properties>
+	
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License, Version 3</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+	<dependencies>
+	    <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+	    </dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-archetype-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<downloadSources>true</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+						<wtpversion>2.0</wtpversion>
+					</configuration>
+				</plugin>			
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

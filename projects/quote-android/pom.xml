@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>Quote Simple Android Application</name>
+	
+	<parent>
+		<groupId>org.bwgz.quote</groupId>
+		<artifactId>quote</artifactId>
+		<version>1.0</version>
+		<relativePath>..</relativePath>
+	</parent>
+	
+	<artifactId>quote-simple-android</artifactId>
+	<packaging>apk</packaging>
+
+	<properties>
+        <android-platform>7</android-platform>
+		<android-maven-plugin-version>3.2.0</android-maven-plugin-version>
+        <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
+        <java-version>1.6</java-version>
+        <maven-eclipse-plugin-version>2.8</maven-eclipse-plugin-version>
+        <com.google.android-version>4.0.1.2</com.google.android-version>
+        <!-- Available Android versions: 1.5_r3, 1.5_r4, 1.6_r2, 2.1.2, 2.1_r1, 2.2.1, 2.3.1, 2.3.3, 4.0.1.2 -->
+        <org.springframework.android-version>1.0.0.RELEASE</org.springframework.android-version>
+    </properties>
+	
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>${com.google.android-version}</version>
+            <scope>provided</scope>
+        </dependency>
+  		<dependency>
+			<groupId>org.springframework.android</groupId>
+			<artifactId>spring-android-rest-template</artifactId>
+            <version>${org.springframework.android-version}</version>
+		</dependency> 
+         <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-jaxrs</artifactId>
+            <version>1.9.10</version>
+        </dependency>   
+   </dependencies>
+  
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>${android-maven-plugin-version}</version>
+                <configuration>
+                    <sdk>
+						<path>C:/Progra~1/Android/android-sdk</path>
+                        <platform>${android-platform}</platform>
+                    </sdk>
+					<deleteConflictingFiles>true</deleteConflictingFiles>
+					<undeployBeforeDeploy>true</undeployBeforeDeploy>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${maven-eclipse-plugin-version}</version>
+                <configuration>
+			          <projectnatures>
+			            <projectnature>org.eclipse.jdt.core.javanature</projectnature>
+			            <projectnature>com.android.ide.eclipse.adt.AndroidNature</projectnature>
+			          </projectnatures>
+			          
+			          <buildcommands>
+			            <buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+			            <buildcommand>com.android.ide.eclipse.adt.ResourceManagerBuilder</buildcommand>
+			            <buildcommand>com.android.ide.eclipse.adt.PreCompilerBuilder</buildcommand>
+			            <buildcommand>com.android.ide.eclipse.adt.ApkBuilder</buildcommand>
+			          </buildcommands>
+		          			          			          			          
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

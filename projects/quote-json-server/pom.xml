@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	<name>Quote JSON Server</name>
+	
+	<parent>
+		<groupId>org.bwgz.quote</groupId>
+		<artifactId>quote</artifactId>
+		<version>1.0</version>
+		<relativePath>..</relativePath>
+	</parent>
+	
+	<artifactId>quote-json-server</artifactId>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bwgz.quote</groupId>
+			<artifactId>quote-data</artifactId>
+			<version>1.0</version>
+		</dependency>
+	    
+		<!-- ********************************************************************** 
+			 ** 				SPRING DEPENDENCIES 							 ** 
+			 ********************************************************************** -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-webmvc</artifactId>
+			<version>1.0.0.RELEASE</version>
+		</dependency>
+		<!-- ********************************************************************** 
+			 ** 				HIBERNATE DEPENDENCIES 							 ** 
+			 ********************************************************************** -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${cglib-version}</version>
+		</dependency>
+
+		<!-- ********************************************************************** 
+			 ** 				 DATABASE DEPENDENCIES 							 ** 
+			 ********************************************************************** -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- ********************************************************************** 
+			 ** 				 OTHER DEPENDENCIES 							 ** 
+			 ********************************************************************** -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		
+	</dependencies>
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="quote-0" class="org.bwgz.quote.data.Quote">
+		<property name="quote" value="Insanity: doing the same thing over and over again and expecting different results." />
+	</bean>
+
+	<bean id="quotes" class="org.springframework.beans.factory.config.ListFactoryBean">
+        <property name="sourceList">
+        <list>
+            <ref bean="quote-0" />
+        </list>
+        </property>
+	</bean>
+</beans>
